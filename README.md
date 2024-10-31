@@ -7,13 +7,14 @@ In an industry plagued by ticket scalping, price manipulation, and counterfeit t
 1. [Introduction](#introduction)
 2. [Problem Statement](#problem-statement)
 3. [Solution](#solution)
-4. [Key Features](#key-features)
-5. [Motivation](#motivation)
-6. [Impact](#impact)
-7. [Future Outlook](#future-outlook)
-8. [Saving Lives Through Fair Ticketing](#saving-lives-through-fair-ticketing)
-9. [Join Us](#join-us)
-10. [Additional Resources](#additional-resources)
+4. [Architecture Overview](#architecture-overview)
+5. [Key Features](#key-features)
+6. [Motivation](#motivation)
+7. [Impact](#impact)
+8. [Future Outlook](#future-outlook)
+9. [Saving Lives Through Fair Ticketing](#saving-lives-through-fair-ticketing)
+10. [Join Us](#join-us)
+11. [Additional Resources](#additional-resources)
 
 ## Introduction
 
@@ -27,6 +28,14 @@ Traditional event ticketing suffers from problems like excessive pricing, lack o
 ## Solution
 
 BlockPass on NEAR introduces blockchain-based, decentralized ticketing to solve these issues. Utilizing NFTs for ticket issuance, BlockPass promotes fair and transparent pricing, authentic tickets, and scalping prevention.
+
+## Architecture Overview
+
+The architecture of BlockPass demonstrates its integration with the NEAR blockchain, handling NFT-based ticket issuance, secure ticket transfers, and transparent transaction records. This decentralized model prevents counterfeiting, scalping, and ensures fair ticket pricing and ownership.
+
+![BlockPass Architecture](./docs/archi.png)
+
+*Figure: BlockPass Architecture on NEAR - showcasing the decentralized ticketing flow, user interactions, and NFT issuance on the NEAR blockchain.*
 
 ## Key Features
 
@@ -58,6 +67,6 @@ Ready to be part of the event ticketing revolution? Join BlockPass on NEAR and h
 
 ### Additional Resources
 
-For comprehensive details on deploying and using the BlockPass contract, please refer to the [BlockPass Smart Contract README](./near_contracts/README.md).
+For comprehensive details on deploying and using the BlockPass contract, please refer to the [BlockPass Smart Contract README](./contracts/README.md).
 
 ---
