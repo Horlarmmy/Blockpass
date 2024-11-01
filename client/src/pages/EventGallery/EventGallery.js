@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import { NearContext } from "../../wallets/near";
 import Link from "next/link";
-// import { fetchEventsFromContract } from "../../contractAPI";
+import { BlockPassNearContract } from "@/config";
 import { events as localEvents } from "../../data";
+import { fetchEventsFromContract } from "@/contractAPI";
 
 import logo from "../../assets/logos/logo.png";
 import Image from "next/image";
 
 const EventGallery = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvent] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { wallet, signedAccountId } = React.useContext(NearContext);
   const [loading, setLoading] = useState(true);
+  const [greeting, setGreeting] = useState('loading...');
+  const [fetchedEvents, setFetchEvents] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,19 +27,23 @@ const EventGallery = () => {
     return new Date(dateString).toLocaleDateString("en-US", options);
   };
 
+  const CONTRACT = BlockPassNearContract;
+
   // console.log(wallet);
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         // Simulate fetching events (replace with actual API call)
-        const fetchedEvents = [...localEvents];
+        const fetchedEvents = await fetchEventsFromContract(wallet, CONTRACT);
 
+        console.log(fetchedEvents)
         const combinedEvents = fetchedEvents.map((event, index) => ({
           ...event,
-          imageUrl: localEvents[index].imageUrl || "", // Fallback to empty string if no imageUrl
+          imageUrl: localEvents[index]?.imageUrl || "", // Fallback to empty string if no imageUrl
         }));
+        console.log(combinedEvents)
+        setEvent(combinedEvents)
 
-        setEvents(combinedEvents);
       } catch (error) {
         console.error("Failed to load events page:", error);
       } finally {
@@ -46,7 +54,7 @@ const EventGallery = () => {
     if (wallet) {
       fetchEvents(); // Fetch events only when the wallet is available
     }
-  }, [wallet]); // Only trigger when `wallet` changes
+  }, [wallet, localEvents]); // Only trigger when `wallet` changes
   
   return (
     <>

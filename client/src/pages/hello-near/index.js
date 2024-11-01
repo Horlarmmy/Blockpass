@@ -5,7 +5,7 @@ import styles from '@/styles/app.module.css';
 import { HelloNearContract } from '../../config';
 import { Cards } from '@/components/cards';
 
-// Contract that the app will interact with
+// Contract that the app will interact
 const CONTRACT = HelloNearContract;
 
 export default function HelloNear() {

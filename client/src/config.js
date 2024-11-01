@@ -1,6 +1,6 @@
 const contractPerNetwork = {
   mainnet: 'hello.near-examples.near',
-  testnet: 'hello.near-examples.testnet',
+  testnet: 'sto.dulaz4.testnet',
 };
 
 // Chains for EVM Wallets 
@@ -20,5 +20,5 @@ const evmWalletChains = {
 }
 
 export const NetworkId = 'testnet';
-export const HelloNearContract = contractPerNetwork[NetworkId];
+export const BlockPassNearContract = contractPerNetwork[NetworkId];
 export const EVMWalletChain = evmWalletChains[NetworkId];

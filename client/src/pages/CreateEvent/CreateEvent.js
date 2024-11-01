@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation"; 
 import { NearContext } from "../../wallets/near";
+import { createEvent } from "@/contractAPI";
 
 import logo from "../../assets/logos/logo.png"; 
 
@@ -70,26 +71,26 @@ const CreateEventForm = () => {
     }
 
     try {
-      const ticketPriceInWei = ethers.utils.parseUnits(
-        formData.ticketPrice,
-        18
-      );
-      const eventDetails = [
-        formData.eventName,
-        formData.dateOfEvent,
-        formData.startTime,
-        formData.endTime,
-        formData.location,
-        "banner", // Placeholder for actual banner CID
-        formData.description,
-        formData.category,
-        formData.moreInformation,
-        ticketPriceInWei.toString(),
-        formData.availableSeats,
-      ];
+      const eventDetails = {
+        "title": formData.eventName,
+        "description": formData.description
+      }
+        // formData.eventName,
+      //   formData.dateOfEvent,
+      //   formData.startTime,
+      //   formData.endTime,
+      //   formData.location,
+      //   "banner", // Placeholder for actual banner CID
+      //   formData.description,
+      //   formData.category,
+      //   formData.moreInformation,
+      //   ticketPriceInWei.toString(),
+      //   formData.availableSeats,
+      // ];
 
       // Simulate event creation logic here
       console.log("Creating event with details:", eventDetails);
+      await createEvent(wallet, eventDetails, formData.availableSeats, formData.startTime, formData.endTime, formData.ticketPrice, formData.category);
 
       setFormData({
         eventName: "",
@@ -204,7 +205,7 @@ const CreateEventForm = () => {
             min="0"
             required
             onChange={handleChange}
-            placeholder="e.g. 1DOT"
+            placeholder="e.g. 1NEAR"
             className="mb-4 p-2 w-full border-2 border-gray-300 flex-auto rounded-md bg-white/5"
           />
 

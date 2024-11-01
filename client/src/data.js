@@ -208,7 +208,7 @@ export const events = [
     date: "2024-12-12",
     startTime: "10:00 AM",
     endTime: "06:00 PM",
-    location: "San Francisco, CA",
+    location: "Bangkok, Thailand",
     imageUrl: event8,
     description:
       "The premier conference for Ethereum developers and enthusiasts.",
