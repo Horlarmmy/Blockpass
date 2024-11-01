@@ -82,6 +82,6 @@ If you encounter any issues or have questions, please reach out through the foll
 - NEAR Community Discord: [NEAR Discord Server](https://discord.gg/near)
 
 ### License
-BlockPass is licensed under the MIT License. See the [LICENSE](./LICENSE.md) file for details.
+BlockPass is licensed under the MIT License. See the [LICENSE](./Blockpass/LICENSE.md) file for details.
 
 Thank you for choosing BlockPass for your event ticketing needs! 🎫🚀
