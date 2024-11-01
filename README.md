@@ -35,7 +35,7 @@ The architecture of BlockPass demonstrates its integration with the NEAR blockch
 
 ![BlockPass Architecture](./docs/archi.png)
 
-*Figure: BlockPass Architecture on NEAR - showcasing the decentralized ticketing flow, user interactions, and NFT issuance on the NEAR blockchain.*
+_Figure: BlockPass Architecture on NEAR - showcasing the decentralized ticketing flow, user interactions, and NFT issuance on the NEAR blockchain._
 
 ## 🔐 Key Features
 
@@ -67,6 +67,6 @@ Ready to be part of the event ticketing revolution? Join BlockPass on NEAR and h
 
 ### Additional Resources
 
-For comprehensive details on deploying and using the BlockPass contract, please refer to the [BlockPass Smart Contract README](./contracts/README.md).
+For comprehensive details on deploying and using the BlockPass contract, please refer to the [BlockPass Smart Contract README WASM](./contracts/Near/README.md) | [BlockPass Smart Contract README (EVM)](./contracts/Hardhat/README.md).
 
 ---
